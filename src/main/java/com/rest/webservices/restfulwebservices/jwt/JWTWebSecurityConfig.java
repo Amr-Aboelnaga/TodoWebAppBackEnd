@@ -79,6 +79,11 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 HttpMethod.POST,
                 authenticationPath
             )
+            .antMatchers(
+            		  HttpMethod.POST,
+                      "/signup"
+                      )
+      
             .antMatchers(HttpMethod.OPTIONS, "/**")
             .and()
             .ignoring()
@@ -90,5 +95,6 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .ignoring()
             .antMatchers("/h2-console/**/**");//Should not be in Production!
     }
+    
 }
 
